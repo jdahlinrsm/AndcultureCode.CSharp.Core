@@ -16,17 +16,17 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
         /// <summary>
         /// Gets the number of errors, if there are any; otherwise, returns 0.
         /// </summary>
-        public virtual int                        ErrorCount     => Errors != null ? Errors.Count : 0;
+        public virtual int ErrorCount => Errors != null ? Errors.Count : 0;
 
         /// <summary>
         /// List of errors around a request
         /// </summary>
-        public virtual List<IError>               Errors         { get; set; }
+        public virtual List<IError> Errors { get; set; }
 
         /// <summary>
         /// Returns whether or not this result has any error
         /// </summary>
-        public virtual bool                       HasErrors      => Errors != null && Errors.Any();
+        public virtual bool HasErrors => Errors != null && Errors.Any();
 
         /// <summary>
         /// List of key value pairs to be used request the very next related Result
@@ -36,7 +36,7 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
         /// <summary>
         /// Actual resulting value from the request
         /// </summary>
-        public virtual T                          ResultObject   { get; set; }
+        public virtual T ResultObject { get; set; }
 
         #endregion Properties
 
@@ -46,13 +46,19 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
         /// <summary>
         /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
         /// </summary>
-        public Result() {}
+        public Result() { }
 
         /// <summary>
         /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
         /// </summary>
         /// <param name="errorMessage"></param>
-        public Result(string errorMessage)                  => this.AddError(errorMessage);
+        public Result(string errorMessage) => this.AddError(errorMessage);
+
+        /// <summary>
+        /// constructor to set the entire errors object
+        /// </summary>
+        /// <param name="errors">a collection of <see cref="IError"/></param>
+        public Result(IEnumerable<IError> errors) => Errors = errors.ToList();
 
         /// <summary>
         /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
@@ -65,8 +71,21 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
         /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
         /// </summary>
         /// <param name="resultObject"></param>
-        public Result(T resultObject)                       => this.ResultObject = resultObject;
+        public Result(T resultObject) => this.ResultObject = resultObject;
 
         #endregion Constructors
+
+        /// <inheritdoc/>
+        public TResult Match<TResult>(System.Func<T, TResult> success, System.Func<List<IError>, TResult> failure)
+        {
+            if (HasErrors)
+            {
+                return failure(Errors);
+            }
+            return success(ResultObject);
+        }
+
+
+
     }
 }

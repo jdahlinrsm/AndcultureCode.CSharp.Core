@@ -11,6 +11,7 @@ using Moq;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -1941,6 +1942,5 @@ namespace AndcultureCode.CSharp.Core.Tests.Unit.Extensions
         }
 
         #endregion ThrowIfAnyErrorsOrResultIsNull
-
     }
 }

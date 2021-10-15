@@ -66,6 +66,8 @@
 - [CacheOptions](#T-AndcultureCode-CSharp-Core-Constants-CacheOptions 'AndcultureCode.CSharp.Core.Constants.CacheOptions')
   - [DAY](#F-AndcultureCode-CSharp-Core-Constants-CacheOptions-DAY 'AndcultureCode.CSharp.Core.Constants.CacheOptions.DAY')
   - [Minutes(minutes)](#M-AndcultureCode-CSharp-Core-Constants-CacheOptions-Minutes-System-Double- 'AndcultureCode.CSharp.Core.Constants.CacheOptions.Minutes(System.Double)')
+- [Composition](#T-AndcultureCode-CSharp-Core-Models-Errors-Composition 'AndcultureCode.CSharp.Core.Models.Errors.Composition')
+  - [Then\`\`2(eitherResult,function)](#M-AndcultureCode-CSharp-Core-Models-Errors-Composition-Then``2-AndcultureCode-CSharp-Core-Models-Errors-Result{``1},System-Func{``1,AndcultureCode-CSharp-Core-Models-Errors-Result{``0}}- 'AndcultureCode.CSharp.Core.Models.Errors.Composition.Then``2(AndcultureCode.CSharp.Core.Models.Errors.Result{``1},System.Func{``1,AndcultureCode.CSharp.Core.Models.Errors.Result{``0}})')
 - [ConfigurationUtils](#T-AndcultureCode-CSharp-Core-Utilities-Configuration-ConfigurationUtils 'AndcultureCode.CSharp.Core.Utilities.Configuration.ConfigurationUtils')
   - [Builder](#P-AndcultureCode-CSharp-Core-Utilities-Configuration-ConfigurationUtils-Builder 'AndcultureCode.CSharp.Core.Utilities.Configuration.ConfigurationUtils.Builder')
   - [GetConfiguration()](#M-AndcultureCode-CSharp-Core-Utilities-Configuration-ConfigurationUtils-GetConfiguration 'AndcultureCode.CSharp.Core.Utilities.Configuration.ConfigurationUtils.GetConfiguration')
@@ -306,6 +308,7 @@
   - [HasErrors](#P-AndcultureCode-CSharp-Core-Interfaces-IResult`1-HasErrors 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.HasErrors')
   - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Interfaces-IResult`1-NextLinkParams 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.NextLinkParams')
   - [ResultObject](#P-AndcultureCode-CSharp-Core-Interfaces-IResult`1-ResultObject 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.ResultObject')
+  - [Match\`\`1(success,failure)](#M-AndcultureCode-CSharp-Core-Interfaces-IResult`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}- 'AndcultureCode.CSharp.Core.Interfaces.IResult`1.Match``1(System.Func{`0,``0},System.Func{System.Collections.Generic.List{AndcultureCode.CSharp.Core.Interfaces.IError},``0})')
 - [IRole](#T-AndcultureCode-CSharp-Core-Interfaces-Entity-IRole 'AndcultureCode.CSharp.Core.Interfaces.Entity.IRole')
   - [Description](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IRole-Description 'AndcultureCode.CSharp.Core.Interfaces.Entity.IRole.Description')
   - [Name](#P-AndcultureCode-CSharp-Core-Interfaces-Entity-IRole-Name 'AndcultureCode.CSharp.Core.Interfaces.Entity.IRole.Name')
@@ -418,6 +421,7 @@
   - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.NextLinkParams')
   - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.ResultObject')
   - [RowCount](#P-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-RowCount 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.RowCount')
+  - [Match\`\`1()](#M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}- 'AndcultureCode.CSharp.Core.Models.Errors.PagedResult`1.Match``1(System.Func{`0,``0},System.Func{System.Collections.Generic.List{AndcultureCode.CSharp.Core.Interfaces.IError},``0})')
 - [Provider](#T-AndcultureCode-CSharp-Core-Providers-Provider 'AndcultureCode.CSharp.Core.Providers.Provider')
   - [Implemented](#P-AndcultureCode-CSharp-Core-Providers-Provider-Implemented 'AndcultureCode.CSharp.Core.Providers.Provider.Implemented')
   - [Name](#P-AndcultureCode-CSharp-Core-Providers-Provider-Name 'AndcultureCode.CSharp.Core.Providers.Provider.Name')
@@ -444,6 +448,7 @@
 - [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Errors-Result`1 'AndcultureCode.CSharp.Core.Models.Errors.Result`1')
   - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor')
   - [#ctor(errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String)')
+  - [#ctor(errors)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError})')
   - [#ctor(errorKey,errorMessage)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(System.String,System.String)')
   - [#ctor(resultObject)](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-`0- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.#ctor(`0)')
   - [ErrorCount](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ErrorCount 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ErrorCount')
@@ -451,6 +456,7 @@
   - [HasErrors](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-HasErrors 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.HasErrors')
   - [NextLinkParams](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-NextLinkParams 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.NextLinkParams')
   - [ResultObject](#P-AndcultureCode-CSharp-Core-Models-Errors-Result`1-ResultObject 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.ResultObject')
+  - [Match\`\`1()](#M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}- 'AndcultureCode.CSharp.Core.Models.Errors.Result`1.Match``1(System.Func{`0,``0},System.Func{System.Collections.Generic.List{AndcultureCode.CSharp.Core.Interfaces.IError},``0})')
 - [ReverseComparer\`1](#T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1')
   - [#ctor()](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor')
   - [#ctor(comparer)](#M-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1-#ctor-System-Collections-Generic-IComparer{`0}- 'AndcultureCode.CSharp.Core.Models.Collections.ReverseComparer`1.#ctor(System.Collections.Generic.IComparer{`0})')
@@ -1279,6 +1285,38 @@ Configure options for X minutes sliding scale expiration
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | minutes | [System.Double](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Double 'System.Double') |  |
+
+<a name='T-AndcultureCode-CSharp-Core-Models-Errors-Composition'></a>
+## Composition `type`
+
+##### Namespace
+
+AndcultureCode.CSharp.Core.Models.Errors
+
+##### Summary
+
+object to provide composition extension methods for the Result object
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Composition-Then``2-AndcultureCode-CSharp-Core-Models-Errors-Result{``1},System-Func{``1,AndcultureCode-CSharp-Core-Models-Errors-Result{``0}}-'></a>
+### Then\`\`2(eitherResult,function) `method`
+
+##### Summary
+
+compose together methods in order from left to right
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| eitherResult | [AndcultureCode.CSharp.Core.Models.Errors.Result{\`\`1}](#T-AndcultureCode-CSharp-Core-Models-Errors-Result{``1} 'AndcultureCode.CSharp.Core.Models.Errors.Result{``1}') | the [Result\`1](#T-AndcultureCode-CSharp-Core-Models-Errors-Result`1 'AndcultureCode.CSharp.Core.Models.Errors.Result`1') of the method on the left of the "then" |
+| function | [System.Func{\`\`1,AndcultureCode.CSharp.Core.Models.Errors.Result{\`\`0}}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{``1,AndcultureCode.CSharp.Core.Models.Errors.Result{``0}}') | the function called inside of the "then" |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| T |  |
+| TValue |  |
 
 <a name='T-AndcultureCode-CSharp-Core-Utilities-Configuration-ConfigurationUtils'></a>
 ## ConfigurationUtils `type`
@@ -4739,6 +4777,30 @@ List of key value pairs to be used request the very next related Result
 
 Actual resulting value from the request
 
+<a name='M-AndcultureCode-CSharp-Core-Interfaces-IResult`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}-'></a>
+### Match\`\`1(success,failure) `method`
+
+##### Summary
+
+match on any case of [IResult\`1](#T-AndcultureCode-CSharp-Core-Interfaces-IResult`1 'AndcultureCode.CSharp.Core.Interfaces.IResult`1').
+
+##### Returns
+
+The result of handling all cases.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| success | [System.Func{\`0,\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{`0,``0}') | What to do if the [IResult\`1](#T-AndcultureCode-CSharp-Core-Interfaces-IResult`1 'AndcultureCode.CSharp.Core.Interfaces.IResult`1') was a sucess. |
+| failure | [System.Func{System.Collections.Generic.List{AndcultureCode.CSharp.Core.Interfaces.IError},\`\`0}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{System.Collections.Generic.List{AndcultureCode.CSharp.Core.Interfaces.IError},``0}') | What to do if the [IResult\`1](#T-AndcultureCode-CSharp-Core-Interfaces-IResult`1 'AndcultureCode.CSharp.Core.Interfaces.IResult`1') was a failure. |
+
+##### Generic Types
+
+| Name | Description |
+| ---- | ----------- |
+| TResult | The type to return from all cases of the [IResult\`1](#T-AndcultureCode-CSharp-Core-Interfaces-IResult`1 'AndcultureCode.CSharp.Core.Interfaces.IResult`1') to. |
+
 <a name='T-AndcultureCode-CSharp-Core-Interfaces-Entity-IRole'></a>
 ## IRole `type`
 
@@ -5940,6 +6002,17 @@ Actual resulting value from the request
 
 TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-PagedResult`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}-'></a>
+### Match\`\`1() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='T-AndcultureCode-CSharp-Core-Providers-Provider'></a>
 ## Provider `type`
 
@@ -6214,6 +6287,19 @@ TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
 | ---- | ---- | ----------- |
 | errorMessage | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') |  |
 
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-Collections-Generic-IEnumerable{AndcultureCode-CSharp-Core-Interfaces-IError}-'></a>
+### #ctor(errors) `constructor`
+
+##### Summary
+
+constructor to set the entire errors object
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| errors | [System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Collections.Generic.IEnumerable 'System.Collections.Generic.IEnumerable{AndcultureCode.CSharp.Core.Interfaces.IError}') | a collection of [IError](#T-AndcultureCode-CSharp-Core-Interfaces-IError 'AndcultureCode.CSharp.Core.Interfaces.IError') |
+
 <a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-#ctor-System-String,System-String-'></a>
 ### #ctor(errorKey,errorMessage) `constructor`
 
@@ -6275,6 +6361,17 @@ List of key value pairs to be used request the very next related Result
 ##### Summary
 
 Actual resulting value from the request
+
+<a name='M-AndcultureCode-CSharp-Core-Models-Errors-Result`1-Match``1-System-Func{`0,``0},System-Func{System-Collections-Generic-List{AndcultureCode-CSharp-Core-Interfaces-IError},``0}-'></a>
+### Match\`\`1() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
 
 <a name='T-AndcultureCode-CSharp-Core-Models-Collections-ReverseComparer`1'></a>
 ## ReverseComparer\`1 `type`
