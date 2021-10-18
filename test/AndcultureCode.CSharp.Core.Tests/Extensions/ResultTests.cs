@@ -11,9 +11,9 @@ namespace AndcultureCode.CSharp.Core.Tests.Extensions
         {
             //Arrange
             var expectedAnswer = 5;
-            var either = new Result<int>(expectedAnswer);
+            var sut = new Result<int>(expectedAnswer);
             //Act
-            var answer = either.Match(x => x, y => 0);
+            var answer = sut.Match(x => x, y => 0);
             //Assert
             Assert.Equal(expectedAnswer, answer);
         }
@@ -23,9 +23,9 @@ namespace AndcultureCode.CSharp.Core.Tests.Extensions
         {
             //Arrange
             var expectedErrorMessage = "Even in the future nothing works!";
-            var either = new Result<string>(expectedErrorMessage);
+            var sut = new Result<string>(expectedErrorMessage);
             //Act
-            var answer = either.Match(x => x.ToString(), y => y.FirstOrDefault().Message);
+            var answer = sut.Match(x => x.ToString(), y => y.FirstOrDefault().Message);
             //Assert
             Assert.Equal(expectedErrorMessage, answer);
         }
