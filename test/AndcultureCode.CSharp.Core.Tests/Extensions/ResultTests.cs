@@ -4,52 +4,65 @@ using Xunit;
 
 namespace AndcultureCode.CSharp.Core.Tests.Extensions
 {
-    public class IResultCompositionTests
+    public class ResultTests
     {
         [Fact]
         public void ShouldReturnSuccess()
         {
+            //Arrange
             var expectedAnswer = 5;
             var either = new Result<int>(expectedAnswer);
+            //Act
             var answer = either.Match(x => x, y => 0);
+            //Assert
             Assert.Equal(expectedAnswer, answer);
         }
 
         [Fact]
         public void ShouldReturnFailure()
         {
+            //Arrange
             var expectedErrorMessage = "Even in the future nothing works!";
             var either = new Result<string>(expectedErrorMessage);
+            //Act
             var answer = either.Match(x => x.ToString(), y => y.FirstOrDefault().Message);
+            //Assert
             Assert.Equal(expectedErrorMessage, answer);
         }
 
         [Fact]
         public void ShouldSucceedFirst()
         {
+            //Arrange/Act
             var result = IsBelow10(6).Then(IsEven);
+            //Assert
             Assert.Equal(6, result.Match(l => l, r => 0));
         }
 
         [Fact]
         public void ShouldSucceedMultipleCompositions ()
         {
+            //Arrange/Act
             var result = IsBelow10(6)
                             .Then(IsAbove0)
                             .Then(IsEven);
+            //Assert
             Assert.Equal(6, result.Match(l => l, r => 0));
         }
 
         [Fact]
         public void ShouldFailFirst()
         {
+            //Arrange/Act
             var result = IsBelow10(12).Then(IsEven);
+            //Assert
             Assert.Equal(ErrorMessages.NotBelow10, result.Match(l => l.ToString(), r => r.FirstOrDefault().Message));
         }
 
         [Fact]
         public void ShouldFailSecond()
         {
+            //Arrange/Act
             var result = IsBelow10(5).Then(IsEven);
             Assert.Equal(ErrorMessages.NotEven, result.Match(l => l.ToString(), r => r.FirstOrDefault().Message));
         }
@@ -57,7 +70,9 @@ namespace AndcultureCode.CSharp.Core.Tests.Extensions
         [Fact]
         public void ShouldShortCircuitOnFirstOfTwoFailedValidations()
         {
+            //Arrange/Act
             var result = IsBelow10(11).Then(IsEven);
+            //Assert
             Assert.Equal(ErrorMessages.NotBelow10, result.Match(l => l.ToString(), r => r.FirstOrDefault().Message));
         }
 
