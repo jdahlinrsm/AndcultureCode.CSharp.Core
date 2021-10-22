@@ -84,8 +84,5 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
             }
             return success(ResultObject);
         }
-
-
-
     }
 }

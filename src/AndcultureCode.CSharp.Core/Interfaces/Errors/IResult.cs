@@ -36,7 +36,7 @@ namespace AndcultureCode.CSharp.Core.Interfaces
         T ResultObject { get; set; }
 
         /// <summary>
-        /// match on any case of <see cref="IResult{T}"/>.
+        /// Match on any case of <see cref="IResult{T}"/>.
         /// </summary>
         /// <typeparam name="TResult">The type to return from all cases of the <see cref="IResult{T}"/> to.</typeparam>
         /// <param name="success">What to do if the <see cref="IResult{T}"/> was a sucess.</param>
