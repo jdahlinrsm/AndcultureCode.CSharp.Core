@@ -3,10 +3,10 @@ using System.Collections.Generic;
 namespace AndcultureCode.CSharp.Core.Models.Collections
 {
     /// <summary>
-    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+    /// an ordered List
     /// </summary>
-    /// <typeparam name="TKey"></typeparam>
-    /// <typeparam name="TValue"></typeparam>
+    /// <typeparam name="TKey">The ordered by key</typeparam>
+    /// <typeparam name="TValue">the type of the ordered collection</typeparam>
     public class OrderedList<TKey, TValue> : IDictionary<TKey, ICollection<TValue>>, IEnumerable<TValue>
     {
         #region Private Properties
@@ -18,7 +18,7 @@ namespace AndcultureCode.CSharp.Core.Models.Collections
         #region Constructors
 
         /// <summary>
-        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// created an empty ordered list
         /// </summary>
         public OrderedList()
         {
@@ -26,7 +26,7 @@ namespace AndcultureCode.CSharp.Core.Models.Collections
         }
 
         /// <summary>
-        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// created an empty ordered list with a provided comparer
         /// </summary>
         /// <param name="comparer"></param>
         public OrderedList(IComparer<TKey> comparer)
@@ -39,10 +39,10 @@ namespace AndcultureCode.CSharp.Core.Models.Collections
         #region Public Methods
 
         /// <summary>
-        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// Adds a value to the ordered list
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param name="key">the key to be ordered by</param>
+        /// <param name="value">the value in the collection</param>
         public void Add(TKey key, TValue value)
         {
             ICollection<TValue> values;
@@ -55,7 +55,7 @@ namespace AndcultureCode.CSharp.Core.Models.Collections
         }
 
         /// <summary>
-        /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+        /// Removed the 
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>

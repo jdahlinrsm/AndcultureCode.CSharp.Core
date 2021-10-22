@@ -5,7 +5,7 @@ using AndcultureCode.CSharp.Core.Models.Entities;
 namespace AndcultureCode.CSharp.Core.Models
 {
     /// <summary>
-    /// TODO https://github.com/AndcultureCode/AndcultureCode.CSharp.Core/issues/38
+    /// Defines properties tracking metadata of a record
     /// </summary>
     public abstract class Auditable : Entity, IAuditable
     {
