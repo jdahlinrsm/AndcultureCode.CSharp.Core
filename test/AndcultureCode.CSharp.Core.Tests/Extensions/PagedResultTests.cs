@@ -4,7 +4,7 @@ using Xunit;
 
 namespace AndcultureCode.CSharp.Core.Tests.Extensions
 {
-    public class PageResultTests
+    public class PagedResultTests
     {
         [Fact]
         public void ShouldReturnSuccess()
@@ -77,28 +77,28 @@ namespace AndcultureCode.CSharp.Core.Tests.Extensions
         }
 
 
-        private static Result<int> IsBelow10(int number)
+        private static PagedResult<int> IsBelow10(int number)
         {
             if (number < 10)
-                return new Result<int>(number);
+                return new PagedResult<int>(number, 5);
 
-            return new Result<int>(ErrorMessages.NotBelow10);
+            return new PagedResult<int>(ErrorMessages.NotBelow10);
         }
 
-        private static Result<int> IsEven(int number)
+        private static PagedResult<int> IsEven(int number)
         {
             if (number % 2 == 0)
-                return new Result<int>(number);
+                return new PagedResult<int>(number, 5);
 
-            return new Result<int>(ErrorMessages.NotEven);
+            return new PagedResult<int>(ErrorMessages.NotEven);
         }
 
-        private static Result<int> IsAbove0(int number)
+        private static PagedResult<int> IsAbove0(int number)
         {
             if (number > 0)
-                return new Result<int>(number);
+                return new PagedResult<int>(number, 5);
 
-            return new Result<int>(ErrorMessages.NotAbove0);
+            return new PagedResult<int>(ErrorMessages.NotAbove0);
         }
 
         internal class ErrorMessages

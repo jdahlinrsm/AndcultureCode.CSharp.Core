@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AndcultureCode.CSharp.Core.Extensions;
 using AndcultureCode.CSharp.Core.Interfaces;
 
 namespace AndcultureCode.CSharp.Core.Models.Errors
@@ -66,6 +67,18 @@ namespace AndcultureCode.CSharp.Core.Models.Errors
             ResultObject = rows;
             RowCount = rowCount;
         }
+
+        /// <summary>
+        /// Constructs a PagedResult in the Error State
+        /// </summary>
+        /// <param name="errorMessage">a string representing the error</param>
+        public PagedResult(string errorMessage) => this.AddError(errorMessage);
+
+        /// <summary>
+        /// constructor to set the entire errors object
+        /// </summary>
+        /// <param name="errors">a collection of <see cref="IError"/></param>
+        public PagedResult(IEnumerable<IError> errors) => Errors = errors.ToList();
 
         #endregion Constructors
 
